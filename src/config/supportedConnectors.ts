@@ -10,9 +10,9 @@ export const injectedInstallLinks = [
     link: 'https://chrome.google.com/webstore/detail/ezdefi/ejeemacpidnaejkhpbmfkadhgjhnolaa'
   },
   {
-    icon: 'LaunchzoneIcon',
-    name: 'Launchzone',
-    link: 'https://docs.lz.finance/our-products/lz-wallet'
+    icon: 'BraveIcon',
+    name: 'Brave',
+    link: 'https://brave.com/vi/wallet/'
   },
   {
     icon: 'TrustWalletIcon',
@@ -30,23 +30,23 @@ const injected = {
   images: [
     'MetamaskIcon',
     'EzdefiIcon',
-    'LaunchzoneIcon',
+    'BraveIcon',
     'TrustWalletIcon',
     'CoinBaseIcon'
   ],
   title: 'Injected Wallets'
 }
 
-if (!window.location.hostname.includes('lz.finance')) {
-  injected.images.splice(1, 2)
-  injected.images.push('LaunchzoneIcon')
-  injectedInstallLinks.splice(1, 2)
-  injectedInstallLinks.push({
-    icon: 'LaunchzoneIcon',
-    name: 'Launchzone',
-    link: 'https://docs.lz.finance/our-products/lz-wallet'
-  })
-}
+// if (!window.location.hostname.includes('lz.finance')) {
+//   injected.images.splice(1, 2)
+//   injected.images.push('BraveIcon')
+//   injectedInstallLinks.splice(1, 2)
+//   injectedInstallLinks.push({
+//     icon: 'LaunchzoneIcon',
+//     name: 'Launchzone',
+//     link: 'https://docs.lz.finance/our-products/lz-wallet'
+//   })
+// }
 
 const walletconnect = {
   images: ['WalletConnectIcon'],
