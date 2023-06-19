@@ -382,7 +382,6 @@ export default {
   AuthereumIcon,
   CoinBaseIcon,
   EzdefiIcon,
-  LaunchzoneIcon,
   MetamaskIcon,
   TorusIcon,
   TrustWalletIcon,
@@ -391,5 +390,6 @@ export default {
   MagicIcon,
   PortisIcon,
   LedgerIcon,
-  FrameIcon
+  FrameIcon,
+  BraveIcon
 }
