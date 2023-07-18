@@ -37,16 +37,16 @@ const injected = {
   title: 'Injected Wallets'
 }
 
-if (!window.location.hostname.includes('lz.finance')) {
-  injected.images.splice(1, 2)
-  injected.images.push('LaunchzoneIcon')
-  injectedInstallLinks.splice(1, 2)
-  injectedInstallLinks.push({
-    icon: 'LaunchzoneIcon',
-    name: 'Launchzone',
-    link: 'https://docs.lz.finance/our-products/lz-wallet'
-  })
-}
+// if (!window.location.hostname.includes('lz.finance')) {
+//   injected.images.splice(1, 2)
+//   injected.images.push('BraveIcon')
+//   injectedInstallLinks.splice(1, 2)
+//   injectedInstallLinks.push({
+//     icon: 'LaunchzoneIcon',
+//     name: 'Launchzone',
+//     link: 'https://docs.lz.finance/our-products/lz-wallet'
+//   })
+// }
 
 const walletconnect = {
   images: ['WalletConnectIcon'],
