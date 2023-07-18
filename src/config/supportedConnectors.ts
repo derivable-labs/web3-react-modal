@@ -10,9 +10,9 @@ export const injectedInstallLinks = [
     link: 'https://chrome.google.com/webstore/detail/ezdefi/ejeemacpidnaejkhpbmfkadhgjhnolaa'
   },
   {
-    icon: 'LaunchzoneIcon',
-    name: 'Launchzone',
-    link: 'https://docs.lz.finance/our-products/lz-wallet'
+    icon: 'BraveIcon',
+    name: 'Brave',
+    link: 'https://brave.com/vi/wallet/'
   },
   {
     icon: 'TrustWalletIcon',
@@ -30,7 +30,7 @@ const injected = {
   images: [
     'MetamaskIcon',
     'EzdefiIcon',
-    'LaunchzoneIcon',
+    'BraveIcon',
     'TrustWalletIcon',
     'CoinBaseIcon'
   ],
