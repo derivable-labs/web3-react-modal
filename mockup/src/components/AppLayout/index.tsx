@@ -95,7 +95,7 @@ export const AppLayout = () => {
       </div>
     </aside>
     <Web3ReactModal
-      providerOptions={ConnectionType}
+      providerOptions={Object.values(ConnectionType)}
       visible={visibleWalletModal}
       setVisible={setVisibleWalletModal}
       onConnect={(connector: any) => {
