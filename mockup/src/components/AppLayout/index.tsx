@@ -69,7 +69,7 @@ export const AppLayout = () => {
   //   }
   // }, [account, library, chainId])
 
-  return <div className={`body dark'}`}>
+  return <div className={`body dark`}>
     <aside className='sidebar'>
       <div className='connect-wallet '>
         {
