@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import styles from '../../styles.module.css'
 import { Modal } from '../Modal'
 import {
@@ -20,52 +20,55 @@ export const Web3ReactModal = ({
   providerOptions: ConnectionType[]
 }) => {
   const [dontHaveProvider, setDontHaveProvider] = useState<any>(false)
-  const modalItems = []
 
   // back to select wallet when popup toggle
   useEffect(() => {
     setDontHaveProvider(false)
   }, [visible])
 
-  // // render web3-react connectors
-  for (const name of providerOptions) {
-    if (!supportedConnectors[name]) continue
+  const modalItems = useMemo(() => {
+    const _modalItems = []
+    // render web3-react connectors
+    for (const name of providerOptions) {
+      if (!supportedConnectors[name]) continue
 
-    const logos = []
-    for (const i in supportedConnectors[name].images) {
-      const WalletIcon = Icons[supportedConnectors[name].images[i]]
-      logos.push(<WalletIcon key={i} />)
-    }
+      const logos = []
+      for (const i in supportedConnectors[name].images) {
+        const WalletIcon = Icons[supportedConnectors[name].images[i]]
+        logos.push(<WalletIcon key={i} />)
+      }
 
-    modalItems.push(
-      <div
-        className={`${styles.walletItem} ${
-          name === ConnectionType.INJECTED ? styles.injectedWalletItem : ''
-        }`}
-        key={name}
-        onClick={async () => {
-          // @ts-ignore
-          if (name === 'injected' && !window.ethereum) {
-            setDontHaveProvider(true)
-          } else {
-            onConnect(name)
-            setVisible(false)
-          }
-        }}
-      >
-        <span
-          className={
-            logos.length === 1 ? styles.smallWalletLogos : styles.walletLogos
-          }
+      _modalItems.push(
+        <div
+          className={`${styles.walletItem} ${
+            name === ConnectionType.INJECTED ? styles.injectedWalletItem : ''
+          }`}
+          key={name}
+          onClick={async () => {
+            // @ts-ignore
+            if (name === ConnectionType.INJECTED && !window.ethereum) {
+              setDontHaveProvider(true)
+            } else {
+              onConnect(name)
+              setVisible(false)
+            }
+          }}
         >
-          {logos}
-        </span>
-        <span className={styles.walletTitle}>
-          {supportedConnectors[name].title}
-        </span>
-      </div>
-    )
-  }
+          <span
+            className={
+              logos.length === 1 ? styles.smallWalletLogos : styles.walletLogos
+            }
+          >
+            {logos}
+          </span>
+          <span className={styles.walletTitle}>
+            {supportedConnectors[name].title}
+          </span>
+        </div>
+      )
+    }
+    return _modalItems
+  }, [providerOptions])
 
   return (
     <Modal setVisible={setVisible} visible={visible}>

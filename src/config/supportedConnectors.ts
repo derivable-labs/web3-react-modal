@@ -20,11 +20,6 @@ export const injectedInstallLinks = [
     icon: 'TrustWalletIcon',
     name: 'TrustWallet',
     link: 'https://trustwallet.com/download'
-  },
-  {
-    icon: 'CoinBaseIcon',
-    name: 'CoinBase',
-    link: 'https://www.coinbase.com/wallet'
   }
 ]
 
