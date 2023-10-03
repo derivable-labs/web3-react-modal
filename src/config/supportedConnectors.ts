@@ -14,7 +14,7 @@ export const injectedInstallLinks = [
   {
     icon: 'BraveIcon',
     name: 'Brave',
-    link: 'https://brave.com/vi/wallet/'
+    link: 'https://brave.com/wallet/'
   },
   {
     icon: 'TrustWalletIcon',
