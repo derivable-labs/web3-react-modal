@@ -1,1 +1,2 @@
-export * from './components/Web3ReactModal'
+export { Web3ReactModal } from './components/Web3ReactModal'
+
