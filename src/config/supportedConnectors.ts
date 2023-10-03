@@ -34,7 +34,7 @@ export const supportedConnectors = {
   },
   [ConnectionType.COINBASE]: {
     images: ['CoinBaseIcon'],
-    title: 'CoinBaseWallet'
+    title: 'CoinBase'
   }
 }
 
